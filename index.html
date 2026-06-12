@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Caty 💖</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #120712;
+      --wine: #3b0a25;
+      --rose: #ff4f91;
+      --pink: #ffb3d1;
+      --soft: #fff4f8;
+      --gold: #ffd166;
+      --purple: #7b2cbf;
+      --glass: rgba(255, 255, 255, 0.12);
+      --border: rgba(255, 255, 255, 0.22);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+      color: var(--soft);
+      background:
+        radial-gradient(circle at top left, rgba(255, 79, 145, 0.32), transparent 35%),
+        radial-gradient(circle at top right, rgba(123, 44, 191, 0.35), transparent 35%),
+        linear-gradient(135deg, #100415, #2a0820 45%, #130715);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 38px 38px;
+      pointer-events: none;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+      z-index: -2;
+    }
+
+    .glow {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.45;
+      z-index: -1;
+      animation: moveGlow 12s infinite alternate ease-in-out;
+    }
+
+    .glow.one {
+      background: var(--rose);
+      top: 8%;
+      left: 4%;
+    }
+
+    .glow.two {
+      background: var(--purple);
+      bottom: 8%;
+      right: 5%;
+      animation-delay: 2s;
+    }
+
+    @keyframes moveGlow {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(45px, -35px) scale(1.15); }
+    }
+
+    .floating-hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      bottom: -60px;
+      color: rgba(255, 179, 209, 0.55);
+      font-size: 22px;
+      animation: floatHeart linear infinite;
+    }
+
+    .floating-hearts span:nth-child(1) { left: 8%; animation-duration: 9s; animation-delay: 0s; }
+    .floating-hearts span:nth-child(2) { left: 20%; animation-duration: 12s; animation-delay: 2s; }
+    .floating-hearts span:nth-child(3) { left: 35%; animation-duration: 10s; animation-delay: 4s; }
+    .floating-hearts span:nth-child(4) { left: 52%; animation-duration: 13s; animation-delay: 1s; }
+    .floating-hearts span:nth-child(5) { left: 70%; animation-duration: 11s; animation-delay: 3s; }
+    .floating-hearts span:nth-child(6) { left: 86%; animation-duration: 14s; animation-delay: 5s; }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      100% {
+        transform: translateY(-115vh) rotate(360deg) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero-card {
+      width: min(1050px, 100%);
+      padding: 56px 28px;
+      border-radius: 34px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.06));
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 209, 102, 0.18);
+      border-radius: 50%;
+      top: -80px;
+      right: -80px;
+      filter: blur(10px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      color: #35101f;
+      background: linear-gradient(135deg, var(--gold), #ffe6a7);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(255, 209, 102, 0.25);
+    }
+
+    h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(4rem, 13vw, 9rem);
+      line-height: 0.9;
+      color: #fff;
+      text-shadow: 0 0 35px rgba(255, 79, 145, 0.55);
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      margin-bottom: 22px;
+      color: #ffe1ec;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      line-height: 1.9;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--rose), #ff7eb3);
+      color: white;
+      box-shadow: 0 14px 30px rgba(255, 79, 145, 0.35);
+    }
+
+    .btn-outline {
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .section {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-header .mini {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.1rem, 6vw, 4rem);
+      color: #fff;
+    }
+
+    .section-header p {
+      max-width: 720px;
+      margin: 16px auto 0;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.8;
+    }
+
+    .love-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .love-card {
+      position: relative;
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.16), rgba(255,255,255,0.055));
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+      overflow: hidden;
+      transition: 0.3s ease;
+      min-height: 260px;
+    }
+
+    .love-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 179, 209, 0.65);
+      box-shadow: 0 25px 55px rgba(255, 79, 145, 0.16);
+    }
+
+    .love-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(255, 79, 145, 0.12);
+      right: -60px;
+      top: -60px;
+    }
+
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      color: #35101f;
+      background: linear-gradient(135deg, var(--gold), #fff0b8);
+      margin-bottom: 18px;
+      box-shadow: 0 10px 25px rgba(255, 209, 102, 0.22);
+    }
+
+    .love-card .number {
+      font-size: 0.78rem;
+      color: var(--pink);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .love-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      margin-bottom: 13px;
+      color: #fff;
+    }
+
+    .love-card p {
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.98rem;
+    }
+
+    .letter-wrap {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .polaroid {
+      padding: 24px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 55px rgba(0,0,0,0.32);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .polaroid .big-icon {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      display: grid;
+      place-items: center;
+      font-size: 4rem;
+      color: white;
+      background:
+        radial-gradient(circle at 30% 30%, #ffb3d1, #ff4f91 48%, #7b2cbf);
+      box-shadow: 0 20px 60px rgba(255, 79, 145, 0.35);
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    .polaroid h3 {
+      font-family: "Great Vibes", cursive;
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .polaroid p {
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .letter {
+      padding: 34px;
+      border-radius: 30px;
+      background: rgba(255, 244, 248, 0.95);
+      color: #3a1224;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter::before {
+      content: "❤";
+      position: absolute;
+      right: 25px;
+      top: 18px;
+      color: rgba(255, 79, 145, 0.17);
+      font-size: 7rem;
+    }
+
+    .letter h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.3rem;
+      margin-bottom: 18px;
+      color: #2a0616;
+      position: relative;
+    }
+
+    .letter p {
+      position: relative;
+      line-height: 1.9;
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+
+    .promises {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .promise {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .promise i {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .promise h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .promise p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+    }
+
+    .final {
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .final-box {
+      width: min(900px, 100%);
+      margin: auto;
+      padding: 44px 28px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(255, 79, 145, 0.22), rgba(255,255,255,0.08));
+      border: 1px solid var(--border);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+    }
+
+    .final h2 {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(3.3rem, 10vw, 6.5rem);
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .final p {
+      max-width: 720px;
+      margin: 0 auto 22px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-family: "Great Vibes", cursive;
+      font-size: 2.4rem;
+      color: var(--gold);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+      .love-grid,
+      .letter-wrap,
+      .promises {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 42px 22px;
+      }
+
+      .love-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow one"></div>
+  <div class="glow two"></div>
+
+  <div class="floating-hearts">
+    <span><i class="fa-solid fa-heart"></i></span>
+    <span><i class="fa-solid fa-heart"></i></span>
+    <span><i class="fa-solid fa-heart"></i></span>
+    <span><i class="fa-solid fa-heart"></i></span>
+    <span><i class="fa-solid fa-heart"></i></span>
+    <span><i class="fa-solid fa-heart"></i></span>
+  </div>
+
+  <main class="page">
+
+    <section class="hero">
+      <div class="hero-card reveal">
+        <div class="badge">
+          <i class="fa-solid fa-gift"></i>
+          Un detalle hecho para ti
+        </div>
+
+        <h1>Caty</h1>
+
+        <h2>Feliz cumpleaños, mi amor</h2>
+
+        <p>
+          Tal vez mis palabras llegaron tarde, pero no quería que fueran palabras vacías.
+          Quería darte algo que se sintiera más tuyo, más bonito y más sincero que un simple mensaje.
+          Así que hice esto para recordarte algunas de las muchas razones por las que te amo.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#razones" class="btn btn-primary">
+            <i class="fa-solid fa-heart"></i>
+            Ver las 10 razones
+          </a>
+
+          <a href="#carta" class="btn btn-outline">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            Leer mi carta
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="razones">
+      <div class="section-header reveal">
+        <div class="mini">
+          <i class="fa-solid fa-sparkles"></i>
+          Lo que amo de ti
+        </div>
+        <h2>10 cosas que amo de ti</h2>
+        <p>
+          No son todas, porque contigo diez razones se quedan cortas.
+          Pero estas son algunas de las cosas que más valoro, admiro y amo de ti.
+        </p>
+      </div>
+
+      <div class="love-grid">
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-face-smile-beam"></i></div>
+          <div class="number">Razón 01</div>
+          <h3>Amo tu sonrisa</h3>
+          <p>
+            Amo tu sonrisa porque tiene una forma muy especial de cambiarme el ánimo.
+            Aunque estemos lejos, imaginarte sonriendo me hace sentir cerca de ti.
+            Tu felicidad me importa, y verte bien es una de esas cosas que me dan paz.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-heart-circle-bolt"></i></div>
+          <div class="number">Razón 02</div>
+          <h3>Amo tu manera de querer</h3>
+          <p>
+            Amo cómo haces sentir tu cariño. No es cualquier cosa encontrar a alguien
+            que pueda quedarse en el pensamiento de uno incluso en los días ocupados,
+            difíciles o raros. Tú tienes esa forma de estar presente aunque haya distancia.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-star"></i></div>
+          <div class="number">Razón 03</div>
+          <h3>Amo lo especial que eres</h3>
+          <p>
+            Amo que no eres como nadie más. Tienes tu propia luz, tu propia forma de ser,
+            tus gestos, tus ideas y esa energía que te hace única. Para mí, Caty no es
+            solo un nombre: es una persona que ocupa un lugar enorme en mi corazón.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-comments"></i></div>
+          <div class="number">Razón 04</div>
+          <h3>Amo hablar contigo</h3>
+          <p>
+            Amo nuestras conversaciones, desde las más simples hasta las más profundas.
+            Me gusta escucharte, saber de ti, reír contigo y sentir que por un momento
+            la distancia se hace más pequeña cuando estamos hablando.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <div class="number">Razón 05</div>
+          <h3>Amo tu corazón</h3>
+          <p>
+            Amo esa parte sensible y bonita que hay en ti. Amo que sientas, que te importe,
+            que tengas una forma tan tuya de vivir las cosas. Tu corazón vale muchísimo,
+            y quiero aprender a cuidarlo mejor cada día.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-moon"></i></div>
+          <div class="number">Razón 06</div>
+          <h3>Amo pensarte incluso de lejos</h3>
+          <p>
+            Amo que, aunque no estemos en el mismo lugar, sigues apareciendo en mi día.
+            En una canción, en una idea, en algo que me recuerda a ti. La distancia no
+            borra lo que siento; solo me recuerda cuánto quiero verte.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="number">Razón 07</div>
+          <h3>Amo tus detalles</h3>
+          <p>
+            Amo esas pequeñas cosas tuyas que quizá tú no notas, pero yo sí.
+            Tu forma de responder, de preocuparte, de emocionarte o de hacerme sentir
+            que importo. A veces lo más pequeño es lo que más se queda en el corazón.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-crown"></i></div>
+          <div class="number">Razón 08</div>
+          <h3>Amo tu esencia</h3>
+          <p>
+            Amo que seas tú, con todo lo que te forma: tu carácter, tu ternura,
+            tus gustos, tus rarezas, tu historia y tu manera de mirar el mundo.
+            No amo una versión perfecta de ti; amo a la Caty real.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-route"></i></div>
+          <div class="number">Razón 09</div>
+          <h3>Amo imaginar un futuro contigo</h3>
+          <p>
+            Amo pensar en los abrazos que todavía nos debemos, en los planes pendientes,
+            en los días donde ya no tengamos que extrañarnos tanto. Me gusta imaginar
+            momentos contigo porque contigo las cosas se sienten más bonitas.
+          </p>
+        </article>
+
+        <article class="love-card reveal">
+          <div class="icon-box"><i class="fa-solid fa-infinity"></i></div>
+          <div class="number">Razón 10</div>
+          <h3>Amo que seas mi persona especial</h3>
+          <p>
+            Amo que entre tantas personas, tú seas quien me importa de esta manera.
+            Amo poder decir que eres mi novia, mi amor, mi Caty. Y aunque hoy llegué tarde
+            con las palabras, no quiero llegar tarde en demostrarte cuánto te amo.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="carta">
+      <div class="letter-wrap">
+
+        <div class="polaroid reveal">
+          <div class="big-icon">
+            <i class="fa-solid fa-envelope-heart"></i>
+          </div>
+
+          <h3>Para ti</h3>
+
+          <p>
+            Esta es una forma de decirte que me importas,
+            que pensé en ti y que quería hacer algo más bonito que solo escribir
+            “feliz cumpleaños” como si fuera cualquier mensaje.
+          </p>
+        </div>
+
+        <div class="letter reveal">
+          <h2>Mi carta para ti</h2>
+
+          <p>
+            Amor, perdón por felicitarte tarde. Sé que tu cumpleaños es una fecha
+            importante y que merecías sentirte celebrada desde el primer momento del día.
+          </p>
+
+          <p>
+            No quiero darte una excusa simple ni hacer como si no importara.
+            Me tardé porque quería decirte algo bonito, algo que no sonara genérico,
+            algo que realmente se sintiera tuyo. Pero aun así, sé que pude hacerlo mejor.
+          </p>
+
+          <p>
+            Lo que sí quiero que sepas es que no me tardé porque no me importaras.
+            Al contrario: me importas muchísimo. Me importas más de lo que a veces sé
+            expresar con palabras, y por eso hoy quería darte algo que tuviera más corazón.
+          </p>
+
+          <p>
+            Feliz cumpleaños, Caty. Ojalá pudiera estar contigo, abrazarte, verte sonreír
+            y decirte todo esto de frente. Mientras llega ese momento, quiero que esta página
+            sea una pequeña forma de acercarme a ti y recordarte que te amo.
+          </p>
+
+          <p>
+            Gracias por existir, por ser tú y por dejarme quererte.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header reveal">
+        <div class="mini">
+          <i class="fa-solid fa-heart-pulse"></i>
+          Mis promesas
+        </div>
+        <h2>Lo que quiero cuidar contigo</h2>
+      </div>
+
+      <div class="promises">
+        <div class="promise reveal">
+          <i class="fa-solid fa-phone-volume"></i>
+          <h3>Estar más presente</h3>
+          <p>Quiero que sientas que, aunque esté lejos, sigo aquí para ti.</p>
+        </div>
+
+        <div class="promise reveal">
+          <i class="fa-solid fa-calendar-heart"></i>
+          <h3>Cuidar tus fechas</h3>
+          <p>Porque lo importante para ti también debe ser importante para mí.</p>
+        </div>
+
+        <div class="promise reveal">
+          <i class="fa-solid fa-gift"></i>
+          <h3>Celebrarte mejor</h3>
+          <p>No solo en tu cumpleaños, también en los días normales.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="final-box reveal">
+        <h2>Feliz cumpleaños, Caty</h2>
+
+        <p>
+          Que este nuevo año de tu vida te traiga paz, amor, alegría y muchos motivos
+          para sonreír. Yo, desde donde estoy, quiero seguir queriéndote, cuidándote
+          y aprendiendo a demostrarte mejor lo mucho que significas para mí.
+        </p>
+
+        <p>
+          Te amo mucho.
+        </p>
+
+        <div class="signature">
+          Con amor, tu novio 💖
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    reveals.forEach(el => observer.observe(el));
+
+    document.addEventListener("click", function(e) {
+      const heart = document.createElement("span");
+      heart.innerHTML = "❤";
+      heart.style.position = "fixed";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+      heart.style.color = "#ffb3d1";
+      heart.style.fontSize = "22px";
+      heart.style.pointerEvents = "none";
+      heart.style.zIndex = "9999";
+      heart.style.transform = "translate(-50%, -50%)";
+      heart.style.animation = "clickHeart 0.9s ease forwards";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 900);
+    });
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes clickHeart {
+        0% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -120%) scale(1.9);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
